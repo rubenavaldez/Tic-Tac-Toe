@@ -3,7 +3,8 @@ let currentPlayer = "X";
 let gameProgress = ["", "", "", "", "", "", "", "", ""];
 const gameStatus = document.querySelector("#gameStatus");
 
-const win = () => `The ${currentPlayer}'s win it! The ${currentPlayer}'s win it!`;
+const win = () =>
+  `The ${currentPlayer}'s win it! The ${currentPlayer}'s win it!`;
 
 const draw = () => `No Soup for YOU!`;
 
@@ -115,19 +116,25 @@ function on() {
   const overlay = (document.getElementById("overlay").style.display = "block");
 
   if (roundWon) {
-    document.querySelector(".container").style.display = "none";
+    // document.querySelector(".container").style.display = "none";
     document.getElementById("tsparticles").style.display = "block";
-    document.getElementById("tsparticles").style.filter = "none";
     tsParticles.loadJSON("tsparticles", "./assets/JSON/tsConfetti.json");
     overlay.innerText = win();
   } else if (roundDraw) {
-      tsParticles.loadJSON("tsparticles", "./assets/JSON/ts404.json");
+    tsParticles.loadJSON("tsparticles", "./assets/JSON/ts404.json");
+    document.getElementById("overlay").removeAttribute("display", "block");
     document.getElementById("overlay").style.display = "none";
     document.querySelector(".container").style.display = "none";
     document.querySelector("#draw").style.display = "block";
     document.getElementById("tsparticles").style.filter = "blur(20px)";
-    document.getElementById("tsparticles").style.display = "block";    
+    document.getElementById("tsparticles").style.display = "block";
   }
+  // } else if (roundDraw) {
+  //   tsParticles.loadJSON("tsparticles", "./assets/JSON/ts404.json");
+  //   document.querySelector(".container").style.display = "none";
+  //   document.querySelector("#draw").style.display = "block";
+  //   document.getElementById("tsparticles").style.display = "block";
+  // }
   // --------------------Fireworks----------------------------------------//
 
   //tsParticles library - https://github.com/matteobruni/tsparticles
@@ -142,6 +149,7 @@ function off() {
   document.getElementById("overlay").style.display = "none";
   document.querySelector("#draw").style.display = "none";
   document.querySelector(".container").style.display = "grid";
+  document.getElementById("tsparticles").style.filter = "none";
   newGame();
 }
 //-----------------------------------------------------------------------------------------

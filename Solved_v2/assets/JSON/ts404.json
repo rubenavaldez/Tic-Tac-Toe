@@ -63,7 +63,7 @@
     "size": {
       "random": {
         "enable": true,
-        "minimumValue": 25
+        "minimumValue": 50
       },
       "value": 50
     }

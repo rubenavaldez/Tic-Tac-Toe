@@ -42,6 +42,7 @@ h1 {
   padding: 0;
   overflow: hidden;
   background: white;
+  
 }
 h2 {
   width: 100%;
@@ -163,5 +164,6 @@ h2 {
   text-shadow: 2px 2px 6px #3a390bc5;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+  text-align: center;
 }
 /* --------------------------------------------- */
