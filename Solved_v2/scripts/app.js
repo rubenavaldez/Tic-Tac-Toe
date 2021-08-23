@@ -119,6 +119,7 @@ function on() {
     // document.querySelector(".container").style.display = "none";
     document.getElementById("tsparticles").style.display = "block";
     tsParticles.loadJSON("tsparticles", "./assets/JSON/tsConfetti.json");
+    // tsParticles.loadJSON("tsparticles", "./assets/JSON/tsFireWorks.json");
     overlay.innerText = win();
   } else if (roundDraw) {
     tsParticles.loadJSON("tsparticles", "./assets/JSON/ts404.json");
